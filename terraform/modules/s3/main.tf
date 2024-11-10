@@ -34,5 +34,5 @@ value = aws_s3_bucket.lambda_bucket.id
 }
 
 output "lambda_zip_key" {
-value = aws_s3_bucket.lambda_zip.key
+value = aws_s3_object.lambda_zip.key
 }
