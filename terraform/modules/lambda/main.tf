@@ -20,7 +20,7 @@ resource "aws_lambda_permission" "allow_s3_invoke" {
 }
 
 resource "aws_cloudwatch_log_group" "lambda_cloudwatch" {
-  name = "aws/lambda/${aws_lambda_function.hello_world.function_name}"
+  name = "/aws/lambda/${aws_lambda_function.hello_world.function_name}"
   retention_in_days = 7
 }
  
