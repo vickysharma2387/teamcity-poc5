@@ -5,6 +5,7 @@ resource "aws_lambda_function" "hello_world" {
   runtime       = "python3.9"
   s3_bucket     = var.bucket_name
   s3_key        = "lambda.zip"
+  s3_object_version = var.s3_object_version
  
   environment {
     variables = var.environment_variables
