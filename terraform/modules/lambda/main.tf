@@ -3,11 +3,11 @@ resource "aws_lambda_function" "hello_world" {
   role          = var.lambda_role_arn
   handler       = "lambda_function.lambda_handler"
   runtime       = "python3.9"
-  s3_bucket     = var.s3_bucket_name
+  s3_bucket     = var.bucket_name
   s3_key        = "lambda.zip"
  
   environment {
-    variables = var.lambda_environment_variables
+    variables = var.environment_variables
   }
 }
  
