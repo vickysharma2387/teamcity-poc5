@@ -19,6 +19,13 @@ bucket = aws_s3_bucket.lambda_bucket.id
   
   depends_on = [var.lambda_permission_id]
 }
+
+resource "aws_s3_bucket_versioning" "bucket_versioning" {
+  bucket = aws_s3_bucket.lambda_bucket.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
  
 output "bucket_name" {
 value = aws_s3_bucket.lambda_bucket.id
