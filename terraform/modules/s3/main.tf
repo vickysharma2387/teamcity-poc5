@@ -17,7 +17,7 @@ bucket = aws_s3_bucket.lambda_bucket.id
     filter_suffix       = ".zip"
   }
   
-  depends_on = [aws_lambda_permission.allow_s3_invoke]
+  depends_on = [var.lambda_permission_arn]
 }
  
 output "bucket_name" {

@@ -7,3 +7,8 @@ variable "lambda_function_arn" {
   description = "ARN of the Lambda"
   type        = string
 }
+
+variable "lambda_permission_arn" {
+  description = "Permission ARN of the Lambda"
+  type        = string
+}

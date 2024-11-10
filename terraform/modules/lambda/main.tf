@@ -23,3 +23,7 @@ resource "aws_lambda_permission" "allow_s3_invoke" {
 output "lambda_function_arn" {
   value = aws_lambda_function.hello_world.arn
 }
+
+output "lambda_permission_arn" {
+  value = aws_lambda_permission.allow_s3_invoke.arn
+}
