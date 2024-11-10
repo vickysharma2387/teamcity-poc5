@@ -3,12 +3,12 @@ provider "aws" {
 }
  
 module "s3" {
-  source      = "../s3"
+  source      = "./s3"
   bucket_name = var.bucket_name
 }
  
 module "lambda" {
-  source                = "../lambda"
+  source                = "./lambda"
   lambda_function_name  = var.lambda_function_name
   bucket_name           = module.s3.bucket_name
   lambda_role_arn       = var.lambda_role_arn
