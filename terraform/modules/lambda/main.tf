@@ -18,6 +18,11 @@ resource "aws_lambda_permission" "allow_s3_invoke" {
   principal     = "s3.amazonaws.com"
   source_arn    = var.s3_bucket_arn
 }
+
+resource "aws_cloudwatch_log_group" "yada" {
+  name = "aws/lambda/${aws_lambda_function.hello_world.function_name}"
+  retention_in_days = 7
+}
  
 # Output the ARN of the Lambda function
 output "lambda_function_arn" {
