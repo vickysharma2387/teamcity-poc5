@@ -1,10 +1,16 @@
 provider "aws" {
   region = "us-west-2"
 }
- 
+
 module "s3" {
   source      = "./modules/s3"
   bucket_name = var.bucket_name
+}
+
+module "iam_role" {
+  source         = "./modules/iam"
+  role_name      = "MyLambdaExecutionRole"
+  s3_bucket_name = var.bucket_name
 }
  
 module "lambda" {
