@@ -14,8 +14,8 @@ resource "aws_lambda_function" "hello_world" {
 resource "aws_lambda_permission" "allow_s3_invoke" {
   statement_id  = "AllowExecutionFromS3"
   action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.hello_world.arn
-principal = "s3.amazonaws.com"
+  function_name = aws_lambda_function.hello_world.function_name
+  principal     = "s3.amazonaws.com"
   source_arn    = var.s3_bucket_arn
 }
  
