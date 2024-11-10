@@ -22,3 +22,7 @@ module "lambda" {
   s3_bucket_arn         = "arn:aws:s3:::${module.s3.bucket_name}"
   environment_variables = var.lambda_environment_variables
 }
+
+output "lambda_function_arn" {
+  value = module.lambda_function.lambda_function_arn
+}
