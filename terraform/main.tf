@@ -6,7 +6,7 @@ module "s3" {
   source      = "./modules/s3"
   bucket_name = var.bucket_name
   lambda_function_arn = module.lambda.lambda_function_arn
-  lambda_permission_arn = module.lambda.lambda_permission_arn
+  lambda_permission_id = module.lambda.lambda_permission_id
 }
 
 module "iam_role" {
@@ -28,6 +28,6 @@ output "lambda_function_arn" {
   value = module.lambda.lambda_function_arn
 }
 
-output "lambda_permission_arn" {
-  value = module.lambda.lambda_permission_arn
+output "lambda_permission_id" {
+  value = module.lambda.lambda_permission_id
 }
