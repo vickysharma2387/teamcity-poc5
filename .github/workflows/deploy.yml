@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: environment_variables
  
     steps:
       - name: Checkout code
@@ -40,9 +41,9 @@ jobs:
         working-directory: ./terraform
  
       - name: Plan Terraform
-        run: terraform plan -var-file="dev.tfvars"
+        run: terraform plan -var-file="${{ ENV_NAME }}.tfvars"
         working-directory: ./terraform
  
       - name: Apply Terraform
-        run: terraform apply -var-file="dev.tfvars" -auto-approve
+        run: terraform apply -var-file="${{ ENV_NAME }}.tfvars" -auto-approve
         working-directory: ./terraform
